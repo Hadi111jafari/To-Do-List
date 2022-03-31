@@ -35,7 +35,7 @@ Git(Version Control)
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/Hadi111jafari/To-Do-List/issues).
 
 
 ## Show your support
