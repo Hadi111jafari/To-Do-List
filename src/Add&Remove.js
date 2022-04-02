@@ -35,6 +35,36 @@ const delTodo = (indexID) => {
   display();
 };
 
+const toggleToDoStatus = (todo) => {
+  List = List.map((todoItem) => {
+    if (todoItem.index === todo.index) {
+      return { ...todo, completed: !todo.completed };
+    }
+    return todoItem;
+  });
+  store();
+};
+
+const clearCheckBox = () => {
+  const completedTodoList = List.filter((todo) => todo.completed);
+  completedTodoList.forEach((todoItem) => {
+    todoItem.completed = false;
+  });
+  store();
+};
+
+const clearCompletedList = () => {
+  List = List.filter((todo) => !todo.completed);
+  List = List.map(
+    (todo, index) => (
+      { completed: todo.completed, description: todo.description, index: index + 1 }
+    ),
+  );
+  store();
+  // eslint-disable-next-line no-use-before-define
+  display();
+};
+
 const display = () => {
   const todoslist = document.querySelector('.todo-list');
   todoslist.innerHTML = '';
@@ -50,9 +80,17 @@ const display = () => {
     CheckboxEl.setAttribute('type', 'checkbox');
     CheckboxEl.setAttribute('name', 'checkbox');
     CheckboxEl.setAttribute('value', List[i].index);
+    CheckboxEl.checked = List[i].completed;
 
     const DescriptionEl = document.createElement('p');
     DescriptionEl.innerText = List[i].description;
+
+    CheckboxEl.addEventListener('change', () => {
+      if (CheckboxEl.checked) {
+        DescriptionEl.classList.add('strike');
+      } else DescriptionEl.classList.remove('strike');
+      toggleToDoStatus(List[i]);
+    });
 
     const Btns = document.createElement('div');
     Btns.classList.add('action-btn');
@@ -137,5 +175,5 @@ const saveEdit = () => {
 const getIsEditing = () => isEditing;
 
 export {
-  getStore, add, saveEdit, display, getIsEditing,
+  getStore, add, saveEdit, display, getIsEditing, clearCompletedList, clearCheckBox,
 };
