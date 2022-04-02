@@ -15,7 +15,6 @@ body {
   padding: 2%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  
 }
 
 .wrapper .headding {
@@ -32,6 +31,7 @@ body {
   width: 98%;
   height: 40px;
 }
+
 .wrapper .taskList::placeholder {
   font-style: italic;
   padding: 10px;
