@@ -7,21 +7,14 @@
     <title>To Do List</title>
 </head>
 <body>
-   <section id="wrapper">
-    <div id="heading">
-        <h2>Today's To Do</h2>
-        <img src="./renew.svg" alt="">
-    </div>
-    <form id="form">
-        <input id="input" type="text" placeholder="Add to your list...">
-        <img src="./return.svg" alt=""> 
-    </form>
-    
-    <ul id="todo-list">
-       
-    </ul>
-    
-    <button id="clear-all-completed" type="submit">Clear all completed</button>
-   </section>
+    <section class="wrapper">
+        <div class="headding">
+            <h1>Today's To Do</h1>
+            <button type="button"><i class="fa fa-refresh"></i></button>
+        </div>
+        <input class="taskList" type="text" name="taskList" id="taskList" placeholder="Add to your list...">
+        <ul class="todo-list"> </ul>
+        <button class="clear-btn" type="button">Clear all completed</button>
+    </section>
 </body>
 </html>
