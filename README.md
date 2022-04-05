@@ -8,7 +8,7 @@ In this repo I have done the list structure of To Do list.
 - webpack
 
 ## Live Link 
-[Live](https://hadi111jafari.github.io/To-Do-List/)
+[Click Here](https://hadi111jafari.github.io/To-Do-List/)
 ## Getting Started
 
 1. Click on repositories
